@@ -1,0 +1,24 @@
+{
+  "name": "myfirstchat",
+  "version": "1.0.0",
+  "description": "MyChat",
+  "main": "server.js",
+  "scripts": {
+    "test": "sever"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlindHonk0897/MyChat-PN-CHIKA-BOX-.git"
+  },
+  "author": "Danilo Alingasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlindHonk0897/MyChat-PN-CHIKA-BOX-/issues"
+  },
+  "homepage": "https://github.com/BlindHonk0897/MyChat-PN-CHIKA-BOX-#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "socket.io": "^2.2.0"
+  }
+}
