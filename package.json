@@ -1,10 +1,11 @@
 {
-  "name": "myfirstchat",
+  "name": "myfirstchatproject",
   "version": "1.0.0",
   "description": "MyChat",
   "main": "server.js",
   "scripts": {
-    "test": "sever"
+    "test": "sever",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,6 @@
     "express": "^4.16.4",
     "mysql": "^2.16.0",
     "socket.io": "^2.2.0"
-  }
+  },
+  "devDependencies": {}
 }
