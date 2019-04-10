@@ -1,3 +1,4 @@
+
 $(function(){
    	 	var socket = io.connect();
    	 	var $messageForm = $('#messageForm');
@@ -42,11 +43,10 @@ $(function(){
    	 		$users.html(html);
    	 	});
 
-         $('#logout').click(function(){
-            //location.relaod(true);
-            // $users = $users.filter(use => use != $realUser);
-            socket.emit('logout',$realUser ,function(data){
-               
+         $logout.click(function(err){
+            err.preventDefault();
+            socket.emit('logout',function($realUser){
             });
-         })
+            location.reload(true);
+         });
 })

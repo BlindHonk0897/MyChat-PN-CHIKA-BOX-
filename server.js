@@ -12,20 +12,20 @@ var connection =  mysql.createConnection({
   database:'chikabox',
 });
 
-connection.connect(function(error){
-   if(!!error){
-     console.log('error');
-   }else{
-     console.log('Connected to databas!');
-     getUsers();
-   }
-});
+// connection.connect(function(error){
+//    if(!!error){
+//      console.log('error');
+//    }else{
+//      console.log('Connected to databas!');
+//      getUsers();
+//    }
+// });
 
 var users = [];
 var connections =[];
 var dataUsers = [];
 
-server.listen(process.env.PORT || 1997);
+server.listen(process.env.PORT || 2020);
 console.log("Server Running.......")
 
 app.use(express.static(__dirname + '/public'));
@@ -56,13 +56,11 @@ io.sockets.on('connection',function(socket){
   	socket.username = data;
   	users.push(socket.username);
   	updateUsernames();
-  })
+  });
 
    socket.on('logout',function(data,callback){
-    callback(true);
-    users = users.filter(use => use != data);
-    updateUsernames();
-  })
+    socket.emit('disconnect',data);
+  });
 
   function updateUsernames(){
   	io.sockets.emit('get users',users);
